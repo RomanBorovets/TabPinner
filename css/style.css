@@ -22,10 +22,22 @@ input{
   outline: none;
   font-weight: 600;
   cursor: pointer;
+  opacity: .9;
+  /* transition: opacity .3s; */
 }
 .btn.green{
   background-color: #23d160;
   border-color: #23d160;
+}
+.btn.pink{
+  background-color: #de6b96;
+  border-color: #de6b96;
+}
+.btn.fluid{
+  width: 100%;
+}
+.btn:hover{
+  opacity: 1;
 }
 
 .addNewTab{
@@ -40,6 +52,11 @@ input{
   width: 80px;
 }
 
+.tabsList{
+  max-height: 350px;
+  overflow-y: auto;
+}
+
 .tabsList ul{
   list-style-type: none;
   padding-left: 0;
@@ -48,10 +65,33 @@ input{
   display: flex;
   flex-flow: wrap;
   font-size: 1rem;
+  background-color: #eee;
+  border-radius: 3px;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 .singleTab > *{
   margin-right: 10px;
 }
+.singleTab .titleTab{
+  width: calc(100% - 60px);
+  overflow: hidden;
+}
 .removeTab{
   cursor: pointer;
+}
+
+.pinTabs{
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.removeTab:hover{
+  color: red;
+}
+
+.faviconTab img{
+  width: 16px;
+  height: 16px;
 }

@@ -16,14 +16,19 @@ function validURL(str) {
   return !!pattern.test(str);
 }
 
+function getFaviconByUrl(url){
+  let decodedUrl = new URL(url);
+  return 'http://www.google.com/s2/favicons?domain=' + decodedUrl.host;
+}
+
 function saveTab(url){
-  let newTab = createTabListElement( '../../icons/icon16.png', url);
-  
+  let newFavicon = getFaviconByUrl(url);
+  let newTab = createTabListElement( newFavicon, url);
   chrome.storage.sync.get({tabPinnerList: []}, function(result){
     let updatedTabsList = result.tabPinnerList;
     updatedTabsList.push({
       url: url,
-      favicon: '../../icons/icon16.png'
+      favicon: newFavicon
     });
     
     chrome.storage.sync.set({tabPinnerList: updatedTabsList});

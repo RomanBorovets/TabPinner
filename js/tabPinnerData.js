@@ -20,7 +20,7 @@ function createTabListElement(icon, url){
   let closeBtn = document.createElement('div');
   closeBtn.classList.add('removeTab');
 
-  let closeBtnText = document.createTextNode('x');
+  let closeBtnText = document.createTextNode("⨯");
   
   closeBtn.appendChild(closeBtnText);
   closeBtn.setAttribute('title', 'Revome tab');
@@ -44,6 +44,7 @@ function createTabListElement(icon, url){
 
   let titleTab = document.createElement('div');
   titleTab.classList.add('titleTab');
+  titleTab.setAttribute('title', url);
 
   titleTab.appendChild(linkTab);
 
