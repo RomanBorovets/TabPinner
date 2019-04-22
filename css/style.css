@@ -13,6 +13,9 @@ input{
   border: 1px solid #ddd;
   padding: 0 5px;
 }
+.text-center{
+  text-align: center;
+}
 .btn{
   height: 2rem;
   font-size: 1rem;
@@ -55,6 +58,10 @@ input{
 .tabsList{
   max-height: 350px;
   overflow-y: auto;
+}
+.tabsList .message{
+  font-size: 1rem;
+  padding-top: 10px;
 }
 
 .tabsList ul{

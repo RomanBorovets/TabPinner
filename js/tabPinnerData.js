@@ -58,10 +58,16 @@ function createTabListElement(icon, url){
 function createTabPinnerList(){
 
   chrome.storage.sync.get({tabPinnerList: []}, function(result){
-    console.log(result.tabPinnerList);
-    for(let i = 0; i < result.tabPinnerList.length; i++){
-      let newTab = createTabListElement(result.tabPinnerList[i].favicon, result.tabPinnerList[i].url);
-      document.querySelector('.tabsList ul').prepend(newTab);
+    // console.log(result.tabPinnerList);
+    if(result.tabPinnerList.length){
+      
+      for(let i = 0; i < result.tabPinnerList.length; i++){
+        let newTab = createTabListElement(result.tabPinnerList[i].favicon, result.tabPinnerList[i].url);
+        document.querySelector('.tabsList ul').prepend(newTab);
+      }
+    
+    }else{
+      // document.querySelector('.tabsList .message').innerHTML = "Add some tabs";
     }
     
   });
